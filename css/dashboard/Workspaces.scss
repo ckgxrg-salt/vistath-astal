@@ -1,0 +1,33 @@
+@use "../palette" as p;
+@use "sass:color";
+
+.Workspaces {
+  margin: 10px 10px 10px 10px;
+  background-color: color.change(p.$light-gray-2, $alpha: 0.7);
+  border-radius: 12px;
+
+  button {
+    all: unset;
+    margin: 10px 10px 10px 10px;
+    font-size: 24px;
+    background-color: color.change(p.$blue, $alpha: 0.5);
+
+    &:hover {
+      background-color: color.change(p.$blue, $alpha: 0.9);
+      font-size: 32px;
+    }
+  }
+
+  label {
+    transition: 200ms;
+    padding: 0 8px;
+    margin: 2px;
+    border-radius: 12px;
+    border: 1pt solid transparent;
+  }
+
+  .focused {
+    background-color: color.change(p.$green, $alpha: 0.7);
+    font-size: 32px;
+  }
+}

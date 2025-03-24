@@ -1,0 +1,12 @@
+@use "./bar/Buttons";
+@use "./bar/Workspaces";
+@use "./bar/Media";
+@use "./bar/Sliders";
+@use "./bar/Status";
+
+window.Bar {
+  .BarContainer {
+    background: transparent;
+    margin: 8px 2px 8px 0;
+  }
+}

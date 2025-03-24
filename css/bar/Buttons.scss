@@ -1,0 +1,29 @@
+@use "../palette" as p;
+@use "sass:color";
+
+.Return {
+  all: unset;
+  background-color: color.change(p.$blue, $alpha: 0.5);
+  border: solid color.change(p.$blue, $alpha: 0.7) 3px;
+  font-size: 32px;
+  margin: 0 0 5px 0;
+  border-radius: 12px;
+}
+
+.TeaDrunk {
+  all: unset;
+  background-color: color.change(p.$yellow, $alpha: 0.5);
+  border: solid color.change(p.$yellow, $alpha: 0.7) 3px;
+  font-size: 32px;
+  margin: 0 0 5px 0;
+  border-radius: 12px;
+}
+
+.TeaZzz {
+  all: unset;
+  background-color: color.change(p.$green, $alpha: 0.5);
+  border: solid color.change(p.$green, $alpha: 0.7) 3px;
+  font-size: 32px;
+  margin: 0 0 5px 0;
+  border-radius: 12px;
+}

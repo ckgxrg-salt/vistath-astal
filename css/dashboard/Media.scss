@@ -1,0 +1,66 @@
+@use "../palette" as p;
+@use "sass:color";
+
+.Media {
+  margin: 10px 10px 10px 10px;
+
+  .Switchers {
+    background-color: color.change(p.$light-gray-2, $alpha: 0.5);
+    border: solid color.change(p.$light-gray-2, $alpha: 0.7) 10px;
+    border-bottom-width: 0;
+    border-radius: 12px;
+
+    button {
+      all: unset;
+      background-color: color.change(p.$gray, $alpha: 0.7);
+    }
+  }
+
+  .NotFound {
+    background-color: color.change(p.$light-gray-1, $alpha: 0.5);
+    border: solid color.change(p.$light-gray-1, $alpha: 0.7) 10px;
+    border-top-width: 0;
+    border-radius: 12px;
+  }
+
+  .MediaPlayer {
+    background-color: color.change(p.$light-gray-1, $alpha: 0.5);
+    border: solid color.change(p.$light-gray-1, $alpha: 0.7) 10px;
+    border-top-width: 0;
+    border-radius: 12px;
+
+    .CoverArt {
+      margin: 10px 10px 10px 10px;
+      background-color: color.change(p.$gray, $alpha: 0.5);
+      background-size: cover;
+    }
+
+    .Progress {
+      margin: 10px 10px 0 10px;
+
+      slider {
+        all: unset;
+      }
+
+      trough {
+        min-height: 50px;
+        border-radius: 14px;
+      }
+
+      highlight {
+        all: unset;
+        border-radius: 14px;
+        background-color: color.change(p.$fg-blue, $alpha: 0.5);
+      }
+    }
+
+    .Actions {
+      margin: 10px 10px 10px 10px;
+
+      button {
+        all: unset;
+        background-color: color.change(p.$light-gray-2, $alpha: 0.7);
+      }
+    }
+  }
+}
