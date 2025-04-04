@@ -1,11 +1,12 @@
 import Battery from "gi://AstalBattery";
 import Wp from "gi://AstalWp";
-import Brightness from "../../util/brightness";
-import { bind, Variable } from "astal";
+import Brightness from "../util/brightness";
+import { bind, exec, Variable } from "astal";
 import { Gtk } from "astal/gtk3";
 
 export default function Sliders() {
 	return <box
+		vertical
 		className="Sliders"
 		widthRequest={200}
 		heightRequest={230}
@@ -54,7 +55,7 @@ function Bright() {
 }
 
 function Mem() {
-	const mem = Variable(0).poll(5000, ["bash", "-c", "printf \"%.0f\\n\" $(free -m | grep Mem | awk '{print ($3 / $2 )}')"], (out) => parseFloat(out));
+	const mem = Variable(0).poll(5000, ["bash", "-c", "free -m | grep Mem | awk '{print ($3 / $2)}'"], out => parseFloat(out));
 
 	return <box>
 		<icon

@@ -1,9 +1,10 @@
 import { App } from "astal/gtk3";
 import { Variable } from "astal";
 
-import Dashboard from "./widget/dashboard/Dashboard";
+import Dashboard from "./dashboard/Dashboard";
 import { hyprInit } from "./util/hyprland";
 import { mprisInit } from "./util/mpris";
+import { weatherInit } from "./util/weather";
 
 import dashboardCss from "./css/dashboard.scss";
 import barCss from "./css/bar.scss";
@@ -17,6 +18,7 @@ App.start({
 	main() {
 		mprisInit();
 		hyprInit();
+		weatherInit();
 		Dashboard();
 	},
 });

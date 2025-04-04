@@ -18,7 +18,7 @@ export default function Quote() {
 			tooltipText="Quotes from fortune"
 			onClicked={() => quote.set(exec("fortune"))}
 		>
-			<icon icon="btsync-gui-10" />
+			<icon icon="messenger-indicator" />
 		</button>
 		<label
 			className="Quote"

@@ -1,20 +1,27 @@
-import { Variable, readFile, writeFile, execAsync } from "astal";
+import { Variable, readFile, writeFile, execAsync, exec } from "astal";
 
-export const location = Variable("");
+export const location = Variable("Vatican");
+export const weather = Variable("");
+export const xdg_data_home = exec(["bash", "-c", "echo $XDG_DATA_HOME"]);
 
-export function init() {
-	let loc = readFile("$XDG_DATA_HOME/astal/loc");
+export function weatherInit() {
+	let loc = readFile(xdg_data_home + "/astal/loc");
 	if (loc.length == 0) {
 		loc = "Vatican";
 	}
 	location.set(loc);
+	weather.poll(60 * 60 * 1000, () => getWeather());
 }
 
 export function updateLocation(loc: string) {
 	location.set(loc);
-	writeFile("$XDG_DATA_HOME/astal/loc", loc);
+	writeFile(xdg_data_home + "/astal/loc", loc);
+	weather.stopPoll();
+	weather.startPoll();
 }
 
-export function getWeather() {
-	return execAsync(["wego", location.get()]);
+export async function getWeather() {
+	return execAsync(["wego", "-f", "emoji", location.get()]).catch(() => {
+		return "Weather Unavailable =(";
+	});
 }

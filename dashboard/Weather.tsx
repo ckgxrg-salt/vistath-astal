@@ -1,5 +1,5 @@
-import { Variable, bind, execAsync } from "astal";
-import { getWeather, location, updateLocation } from "../../util/weather";
+import { bind } from "astal";
+import { weather, updateLocation, location } from "../util/weather";
 
 export default function Weather() {
 	return <box
@@ -23,13 +23,11 @@ function Location() {
 }
 
 function RealWeather() {
-	const weather = Variable("").poll(60 * 60 * 1000, () => getWeather());
-
 	return <box
 		className="Today"
 		widthRequest={230}
 		heightRequest={80}
 	>
-		<label label={weather()} />
+		<label label={bind(weather)} />
 	</box>;
 }
