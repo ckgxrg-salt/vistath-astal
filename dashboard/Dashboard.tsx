@@ -1,10 +1,10 @@
-import { App, Astal, Gtk, Gdk } from "astal/gtk3";
+import { App, Astal, Gtk } from "astal/gtk3";
 import { bind } from "astal";
 
 import Calendar from "./Calendar";
 import Media from "./Media";
 import Quote from "./Quote";
-import Sliders from "./Sliders";
+import Monitor from "./Monitor";
 import Tray from "./Tray";
 import Weather from "./Weather";
 
@@ -31,7 +31,7 @@ export default function Dashboard() {
 			valign={Gtk.Align.CENTER}
 		>
 			<box>
-				<Sliders />
+				<Monitor />
 				<Calendar />
 			</box>
 			<box>
