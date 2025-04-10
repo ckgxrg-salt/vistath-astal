@@ -1,12 +1,10 @@
 import { App, Astal, Gtk } from "astal/gtk3";
 import { bind } from "astal";
 
+import BottomRow from "./BottomRow";
 import Calendar from "./Calendar";
-import Media from "./Media";
 import Quote from "./Quote";
 import Monitor from "./Monitor";
-import Tray from "./Tray";
-import Weather from "./Weather";
 
 import { focused } from "../app";
 
@@ -37,11 +35,7 @@ export default function Dashboard() {
 			<box>
 				<Quote />
 			</box>
-			<box>
-				<Media />
-				<Weather />
-				<Tray />
-			</box>
+			<BottomRow />
 		</box>
 	</window >;
 }

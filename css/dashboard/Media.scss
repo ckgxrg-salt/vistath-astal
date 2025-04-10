@@ -1,5 +1,12 @@
 @use "../palette" as p;
 
+.MediaButton {
+  all: unset;
+  font-size: 96px;
+  background-color: p.$black;
+  border-radius: 12px;
+}
+
 .Media {
   background-color: p.$black;
   border-radius: 12px;

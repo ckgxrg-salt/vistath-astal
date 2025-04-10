@@ -2,28 +2,41 @@ import { Gtk } from "astal/gtk3";
 import Mpris from "gi://AstalMpris";
 import { bind } from "astal";
 
+import { active } from "./BottomRow";
 import { activePlayer, nextPlayer, prevPlayer, mapPlayers, lengthStr } from "../util/mpris";
 
 export default function Media() {
-	return <box
-		vertical
-		className="Media"
-		widthRequest={380}
-	>
-		{Switchers()}
-		{bind(activePlayer).as(player => {
-			if (player === undefined) {
-				return <label
-					className="NotFound"
-					widthRequest={420}
-					heightRequest={200}
-				>
-					No Players Found
-				</label>;
-			} else {
-				return <PlayerControl player={player} />;
-			}
-		})}
+	return <box>
+		<button
+			className="MediaButton"
+			visible={bind(active).as(v => v != "mpris")}
+			onClicked={() => {
+				active.set("mpris");
+			}}
+		>
+			<icon icon="audio-radio" />
+		</button>
+		<box
+			vertical
+			className="Media"
+			visible={bind(active).as(v => v == "mpris")}
+			widthRequest={380}
+		>
+			{Switchers()}
+			{bind(activePlayer).as(player => {
+				if (player === undefined) {
+					return <label
+						className="NotFound"
+						widthRequest={420}
+						heightRequest={200}
+					>
+						No Players Found
+					</label>;
+				} else {
+					return <PlayerControl player={player} />;
+				}
+			})}
+		</box>
 	</box>;
 }
 

@@ -1,5 +1,12 @@
 @use "../palette" as p;
 
+.TrayButton {
+  all: unset;
+  font-size: 96px;
+  background-color: p.$black;
+  border-radius: 12px;
+}
+
 .SysTray {
   background-color: p.$black;
   border-radius: 12px;

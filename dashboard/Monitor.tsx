@@ -65,7 +65,7 @@ function Cpu() {
 		<icon
 			className="CpuIcon"
 			valign={Gtk.Align.START}
-			icon="weather-clear"
+			icon="cpu"
 		/>
 		<slider
 			className="CpuSlider"
@@ -85,7 +85,7 @@ function Mem() {
 		<icon
 			className="MemoryIcon"
 			valign={Gtk.Align.START}
-			icon="weather-clear"
+			icon="drive-virtual"
 		/>
 		<slider
 			className="MemorySlider"
