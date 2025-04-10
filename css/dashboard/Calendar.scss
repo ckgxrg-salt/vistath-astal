@@ -1,0 +1,10 @@
+@use "../palette" as p;
+
+.Calendar {
+  background-color: p.$black;
+  border-radius: 12px;
+
+  .Clock {
+    border-bottom: dashed p.$light-gray-darker 2px;
+  }
+}

@@ -4,6 +4,7 @@ import { weather, updateLocation, location } from "../util/weather";
 export default function Weather() {
 	return <box
 		vertical
+		className="Weather"
 		widthRequest={230}
 		heightRequest={140}
 	>
@@ -24,7 +25,7 @@ function Location() {
 
 function RealWeather() {
 	return <box
-		className="Today"
+		className="RealWeather"
 		widthRequest={230}
 		heightRequest={80}
 	>

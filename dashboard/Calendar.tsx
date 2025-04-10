@@ -3,6 +3,7 @@ import { Variable, GLib, execAsync } from "astal";
 export default function Calendar() {
 	return <box
 		vertical
+		className="Calendar"
 		widthRequest={230}
 		heightRequest={140}
 	>
@@ -21,9 +22,9 @@ function Clock() {
 		widthRequest={230}
 		heightRequest={80}
 	>
-		<label label={time().as(v => v.format("%H")!)} />
-		<label label={time().as(v => v.format("%a\n%m/%d")!)} />
-		<label label={time().as(v => v.format("%M")!)} />
+		<label label={time().as(v => v.format("%H")!)} css="font-size: 96px;" />
+		<label label={time().as(v => v.format("%a\n%m/%d")!)} css="font-size: 48px;" />
+		<label label={time().as(v => v.format("%M")!)} css="font-size: 96px;" />
 	</box>;
 }
 
@@ -38,6 +39,7 @@ function Today() {
 
 	return <box
 		className="Today"
+		vertical
 		widthRequest={230}
 		heightRequest={80}
 	>

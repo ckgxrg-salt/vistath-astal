@@ -2,11 +2,11 @@
 @use "sass:color";
 
 .QuoteContainer {
-  background-color: color.change(p.$blue, $alpha: 0.5);
-  border: solid color.change(p.$blue, $alpha: 0.7) 10px;
+  background-color: p.$black;
   border-radius: 12px;
 
-  .Refresh {
+  .QuoteButton {
     all: unset;
+    border-right: dashed p.$light-gray-darker 2px;
   }
 }

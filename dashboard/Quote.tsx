@@ -38,7 +38,7 @@ export default function Quote() {
 function getMaxContent(str: string) {
 	let lines = str.split("\n");
 	if (lines.length > 4) {
-		return lines.slice(0, 3).map(each => each + "\n").toString() + "...";
+		return lines.slice(0, 3).map(each => each + "\n").toString() + lines.at(4) + "...";
 	} else {
 		return str;
 	}

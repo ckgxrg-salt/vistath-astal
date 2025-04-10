@@ -1,0 +1,11 @@
+@use "../palette" as p;
+
+.SysTray {
+  background-color: p.$black;
+  border-radius: 12px;
+
+  button {
+    all: unset;
+    background-color: p.$dark-gray;
+  }
+}

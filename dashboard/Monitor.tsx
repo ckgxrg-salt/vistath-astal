@@ -6,7 +6,7 @@ import { Gtk } from "astal/gtk3";
 export default function Monitor() {
 	return <box
 		vertical
-		className="Sliders"
+		className="Monitor"
 		widthRequest={200}
 		heightRequest={230}
 	>
@@ -90,7 +90,7 @@ function Mem() {
 		<slider
 			className="MemorySlider"
 			halign={Gtk.Align.CENTER}
-			value={bind(mem).as(m => m.used / m.total)}
+			value={bind(mem).as(m => m.user / m.total)}
 		/>
 	</box>;
 }

@@ -1,0 +1,10 @@
+@use "../palette" as p;
+
+.Weather {
+  background-color: p.$black;
+  border-radius: 12px;
+
+  .Location {
+    border-bottom: dashed p.$light-gray-darker 2px;
+  }
+}

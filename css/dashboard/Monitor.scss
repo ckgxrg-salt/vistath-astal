@@ -1,0 +1,47 @@
+@use "../palette" as p;
+
+.Monitor {
+  background-color: p.$black;
+  border-radius: 12px;
+
+  slider {
+    all: unset;
+  }
+
+  trough {
+    all: unset;
+    min-width: 200px;
+    min-height: 20px;
+    border-radius: 12px;
+    background-color: p.$dark-gray;
+  }
+
+  highlight {
+    all: unset;
+    border-radius: 12px;
+  }
+
+  .CpuSlider highlight {
+    background-color: p.$cyan;
+  }
+
+  .MemorySlider highlight {
+    background-color: p.$yellow;
+  }
+
+  .BatteryLow highlight {
+    background-color: p.$orange;
+  }
+
+  .BatteryLow highlight {
+    background-color: p.$red;
+  }
+
+  .BatteryCharging highlight {
+    background-color: p.$green;
+  }
+
+  .Battery highlight {
+    background-color: p.$pale-yellow;
+  }
+}

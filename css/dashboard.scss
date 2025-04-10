@@ -1,11 +1,9 @@
-@use "./dashboard/Buttons";
-@use "./dashboard/Dock";
-@use "./dashboard/Media";
-@use "./dashboard/MediaServices";
-@use "./dashboard/Quote";
-@use "./dashboard/Sliders";
-@use "./dashboard/Status";
-@use "./dashboard/Workspaces";
+@use "dashboard/Calendar";
+@use "dashboard/Media";
+@use "dashboard/Monitor";
+@use "dashboard/Quote";
+@use "dashboard/Tray";
+@use "dashboard/Weather";
 
 window.Dashboard {
   .DashboardContainer {
