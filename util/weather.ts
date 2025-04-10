@@ -21,7 +21,7 @@ export function updateLocation(loc: string) {
 }
 
 export async function getWeather() {
-	return execAsync(["wego", "-f", "emoji", location.get()]).catch(() => {
+	return execAsync(["wego", "-f", "emoji", location.get().replaceAll(" ", "%20")]).catch(() => {
 		return "Weather Unavailable =(";
 	});
 }
