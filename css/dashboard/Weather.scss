@@ -12,6 +12,7 @@
   border-radius: 12px;
 
   .Location {
+    all: unset;
     border-bottom: dashed p.$light-gray-darker 2px;
   }
 }

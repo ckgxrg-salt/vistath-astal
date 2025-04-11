@@ -1,6 +1,5 @@
 import { bind } from "astal";
 import { weather, updateLocation, location } from "../util/weather";
-import { Gtk } from "astal/gtk3";
 import { active } from "./BottomRow";
 
 export default function Weather() {
@@ -8,18 +7,22 @@ export default function Weather() {
 		<button
 			className="WeatherButton"
 			visible={bind(active).as(v => v != "weather")}
+			widthRequest={260}
+			heightRequest={260}
+			margin={15}
 			onClicked={() => {
 				active.set("weather");
 			}}
 		>
-			<icon icon="weather-clear" />
+			<icon icon="weather-clear-symbolic" />
 		</button>
 		<box
 			vertical
 			className="Weather"
 			visible={bind(active).as(v => v == "weather")}
-			widthRequest={230}
-			heightRequest={140}
+			widthRequest={760}
+			heightRequest={260}
+			margin={15}
 		>
 			<Location />
 			<RealWeather />
@@ -32,8 +35,13 @@ function Location() {
 		className="Location"
 		widthRequest={230}
 		heightRequest={80}
-		text={bind(location)}
-		onActivate={self => updateLocation(self.text)}
+		placeholderText={bind(location)}
+		onActivate={self => {
+			updateLocation(self.text);
+			self.set_text("");
+			self.hide();
+			self.show();
+		}}
 	/>;
 }
 

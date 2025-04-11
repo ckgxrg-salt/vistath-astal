@@ -4,8 +4,9 @@ export default function Calendar() {
 	return <box
 		vertical
 		className="Calendar"
-		widthRequest={230}
-		heightRequest={140}
+		widthRequest={640}
+		heightRequest={320}
+		margin={20}
 	>
 		<Clock />
 		<Today />

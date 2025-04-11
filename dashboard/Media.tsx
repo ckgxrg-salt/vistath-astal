@@ -10,6 +10,9 @@ export default function Media() {
 		<button
 			className="MediaButton"
 			visible={bind(active).as(v => v != "mpris")}
+			widthRequest={260}
+			heightRequest={260}
+			margin={15}
 			onClicked={() => {
 				active.set("mpris");
 			}}
@@ -20,7 +23,9 @@ export default function Media() {
 			vertical
 			className="Media"
 			visible={bind(active).as(v => v == "mpris")}
-			widthRequest={380}
+			widthRequest={760}
+			heightRequest={260}
+			margin={15}
 		>
 			{Switchers()}
 			{bind(activePlayer).as(player => {

@@ -10,7 +10,9 @@ export default function Quote() {
 	return <box
 		className="QuoteContainer"
 		halign={Gtk.Align.CENTER}
-		heightRequest={150}
+		widthRequest={655}
+		heightRequest={160}
+		margin={15}
 	>
 		<button
 			className="QuoteButton"
@@ -23,12 +25,12 @@ export default function Quote() {
 		</button>
 		<label
 			className="Quote"
-			widthRequest={770}
+			widthRequest={600}
 			halign={Gtk.Align.CENTER}
 			truncate
 			wrap
 			wrapMode={Pango.WrapMode.CHAR}
-			maxWidthChars={55}
+			maxWidthChars={35}
 			label={bind(quote).as(content => removeLeadingComma(getMaxContent(content)))}
 			tooltipText={bind(quote)}
 		/>
@@ -37,8 +39,8 @@ export default function Quote() {
 
 function getMaxContent(str: string) {
 	let lines = str.split("\n");
-	if (lines.length > 4) {
-		return lines.slice(0, 3).map(each => each + "\n").toString() + lines.at(4) + "...";
+	if (lines.length > 3) {
+		return lines.slice(0, 2).map(each => each + "\n").toString() + lines.at(3) + "...";
 	} else {
 		return str;
 	}

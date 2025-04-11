@@ -12,8 +12,7 @@
   border-radius: 12px;
 
   .Switchers {
-    border-bottom-width: 0;
-    border-radius: 12px;
+    border-bottom: dashed p.$light-gray-darker 2px;
 
     button {
       all: unset;

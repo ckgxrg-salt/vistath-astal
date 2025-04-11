@@ -7,8 +7,9 @@ export default function Monitor() {
 	return <box
 		vertical
 		className="Monitor"
-		widthRequest={200}
-		heightRequest={230}
+		widthRequest={320}
+		heightRequest={320}
+		margin={15}
 	>
 		<Bat />
 		<Cpu />
