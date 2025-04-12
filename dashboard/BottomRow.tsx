@@ -1,5 +1,4 @@
 // Processes the folding logic
-
 import { Variable } from "astal";
 
 import Media from "./Media";
