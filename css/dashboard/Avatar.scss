@@ -1,0 +1,24 @@
+@use "../palette" as p;
+
+.Avatar {
+  background-color: p.$black;
+  border-radius: 12px;
+
+  .AvatarImg {
+    background-image: url("css/abstract-ckgxrg.jpg");
+    background-size: 240px 240px;
+    border-radius: 128px;
+  }
+}
+
+.CoffeeDrunk {
+  background-color: p.$dark-gray;
+  color: p.$yellow;
+  border-radius: 25px;
+}
+
+.CoffeeZzz {
+  background-color: p.$dark-gray;
+  color: p.$cyan;
+  border-radius: 25px;
+}

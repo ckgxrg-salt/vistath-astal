@@ -72,63 +72,63 @@ function PlayerControl({ player }: { player: Mpris.Player }) {
 	const position = bind(player, "position").as(p => player.length > 0 ? p / player.length : 0);
 	const playIcon = bind(player, "playbackStatus").as(s => s === Mpris.PlaybackStatus.PLAYING ? "media-playback-pause-symbolic" : "media-playback-start-symbolic");
 
-	return <box className="MediaPlayer" vertical>
-		<box>
-			<box className="CoverArt" css={coverArt} widthRequest={120} heightRequest={120} />
+	return <box className="MediaPlayer">
+		<box className="CoverArt" css={coverArt} widthRequest={120} heightRequest={120} />
+		<box vertical>
 			<box vertical valign={CENTER} className="Title">
 				<label truncate maxWidthChars={20} halign={START} label={title} tooltipText={title} />
 				<label halign={START} valign={START} wrap label={artist} tooltipText={artist} />
 			</box>
+			<slider
+				className="Progress"
+				visible={bind(player, "length").as(l => l > 0)}
+				onDragged={({ value }) => player.position = value * player.length}
+				value={position}
+			/>
+			<centerbox
+				className="Actions"
+				widthRequest={400}
+				heightRequest={50}
+			>
+				<label
+					className="Position"
+					halign={START}
+					visible={bind(player, "length").as(l => l > 0)}
+					label={bind(player, "position").as(lengthStr)}
+				/>
+				<box>
+					<button
+						onClicked={() => player.previous()}
+						visible={bind(player, "canGoPrevious")}
+						widthRequest={40}
+						heightRequest={30}
+					>
+						<icon icon="media-skip-backward-symbolic" />
+					</button>
+					<button
+						onClicked={() => player.play_pause()}
+						visible={bind(player, "canControl")}
+						widthRequest={40}
+						heightRequest={30}
+					>
+						<icon icon={playIcon} />
+					</button>
+					<button
+						onClicked={() => player.next()}
+						visible={bind(player, "canGoNext")}
+						widthRequest={40}
+						heightRequest={30}
+					>
+						<icon icon="media-skip-forward-symbolic" />
+					</button>
+				</box>
+				<label
+					className="Length"
+					halign={END}
+					visible={bind(player, "length").as(l => l > 0)}
+					label={bind(player, "length").as(l => l > 0 ? lengthStr(l) : "0:00")}
+				/>
+			</centerbox>
 		</box>
-		<slider
-			className="Progress"
-			visible={bind(player, "length").as(l => l > 0)}
-			onDragged={({ value }) => player.position = value * player.length}
-			value={position}
-		/>
-		<centerbox
-			className="Actions"
-			widthRequest={400}
-			heightRequest={50}
-		>
-			<label
-				className="Position"
-				halign={START}
-				visible={bind(player, "length").as(l => l > 0)}
-				label={bind(player, "position").as(lengthStr)}
-			/>
-			<box>
-				<button
-					onClicked={() => player.previous()}
-					visible={bind(player, "canGoPrevious")}
-					widthRequest={40}
-					heightRequest={30}
-				>
-					<icon icon="media-skip-backward-symbolic" />
-				</button>
-				<button
-					onClicked={() => player.play_pause()}
-					visible={bind(player, "canControl")}
-					widthRequest={40}
-					heightRequest={30}
-				>
-					<icon icon={playIcon} />
-				</button>
-				<button
-					onClicked={() => player.next()}
-					visible={bind(player, "canGoNext")}
-					widthRequest={40}
-					heightRequest={30}
-				>
-					<icon icon="media-skip-forward-symbolic" />
-				</button>
-			</box>
-			<label
-				className="Length"
-				halign={END}
-				visible={bind(player, "length").as(l => l > 0)}
-				label={bind(player, "length").as(l => l > 0 ? lengthStr(l) : "0:00")}
-			/>
-		</centerbox>
 	</box >
 }

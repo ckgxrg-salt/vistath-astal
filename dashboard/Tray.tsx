@@ -49,7 +49,7 @@ function groupIntoRows(items: Tray.TrayItem[]) {
 		let upper = buttons.slice(0, 5);
 		let lower = buttons.slice(5);
 		return [
-			<box heightRequest={110}>
+			<box heightRequest={110} className="TrayUpper">
 				{upper}
 			</box>,
 			<box heightRequest={110}>
@@ -58,7 +58,7 @@ function groupIntoRows(items: Tray.TrayItem[]) {
 		];
 	}
 	return [
-		<box heightRequest={110}>
+		<box heightRequest={110} className="TrayUpper">
 			{buttons}
 		</box>,
 		<box heightRequest={110} />

@@ -1,4 +1,5 @@
 import { Variable, GLib, execAsync } from "astal";
+import { Gtk } from "astal/gtk3";
 
 export default function Calendar() {
 	return <box
@@ -6,7 +7,7 @@ export default function Calendar() {
 		className="Calendar"
 		widthRequest={640}
 		heightRequest={320}
-		margin={20}
+		margin={15}
 	>
 		<Clock />
 		<Today />
@@ -20,12 +21,15 @@ function Clock() {
 
 	return <box
 		className="Clock"
+		halign={Gtk.Align.CENTER}
 		widthRequest={230}
-		heightRequest={80}
 	>
-		<label label={time().as(v => v.format("%H")!)} css="font-size: 96px;" />
-		<label label={time().as(v => v.format("%a\n%m/%d")!)} css="font-size: 48px;" />
-		<label label={time().as(v => v.format("%M")!)} css="font-size: 96px;" />
+		<label label={time().as(v => v.format("%H")!)} css="font-size: 96px; margin-right: 25px;" />
+		<box vertical valign={Gtk.Align.CENTER}>
+			<label label={time().as(v => v.format("%a")!)} css="font-size: 32px;" />
+			<label label={time().as(v => v.format("%m/%d")!)} css="font-size: 24px;" />
+		</box>
+		<label label={time().as(v => v.format("%M")!)} css="font-size: 96px; margin-left: 25px;" />
 	</box>;
 }
 

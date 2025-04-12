@@ -6,7 +6,7 @@
 ags.lib.bundle {
   inherit pkgs;
   src = ./.;
-  name = "daywatch-astal";
+  name = "vistath-astal";
   entry = "app.ts";
   gtk4 = false;
 

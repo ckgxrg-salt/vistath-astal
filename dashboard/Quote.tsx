@@ -30,7 +30,7 @@ export default function Quote() {
 			truncate
 			wrap
 			wrapMode={Pango.WrapMode.CHAR}
-			maxWidthChars={35}
+			maxWidthChars={25}
 			label={bind(quote).as(content => removeLeadingComma(getMaxContent(content)))}
 			tooltipText={bind(quote)}
 		/>

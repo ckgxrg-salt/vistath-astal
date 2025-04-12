@@ -3,6 +3,14 @@
 .Monitor {
   background-color: p.$black;
   border-radius: 12px;
+  padding-top: 30px;
+
+  icon {
+    font-size: 36px;
+    margin: 20px;
+    margin-top: 22px;
+    margin-right: unset;
+  }
 
   slider {
     all: unset;
@@ -11,7 +19,8 @@
   trough {
     all: unset;
     min-width: 200px;
-    min-height: 20px;
+    min-height: 40px;
+    margin: 20px;
     border-radius: 12px;
     background-color: p.$dark-gray;
   }

@@ -7,6 +7,7 @@ import Quote from "./Quote";
 import Monitor from "./Monitor";
 
 import { focused } from "../app";
+import Avatar from "./Avatar";
 
 export default function Dashboard() {
 	return <window
@@ -19,8 +20,6 @@ export default function Dashboard() {
 		exclusivity={Astal.Exclusivity.IGNORE}
 		visible={bind(focused).as(v => !v)}
 		keymode={Astal.Keymode.ON_DEMAND}
-		widthRequest={1540}
-		heightRequest={420}
 	>
 		<box
 			vertical
@@ -31,6 +30,7 @@ export default function Dashboard() {
 			<box>
 				<Monitor />
 				<Calendar />
+				<Avatar />
 			</box>
 			<box>
 				<Quote />
