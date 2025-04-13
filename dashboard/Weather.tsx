@@ -57,7 +57,7 @@ function LocationEntry() {
 			className="Location"
 			widthRequest={230}
 			heightRequest={80}
-			placeholderText={bind(location)}
+			placeholderText={"New Location..."}
 			onActivate={self => {
 				updateLocation(self.text);
 				self.get_toplevel().destroy();

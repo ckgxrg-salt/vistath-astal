@@ -18,7 +18,12 @@ export function sendBack() {
 	});
 }
 
-// Switch the focus back to primary monitor before any task
-export function switchFocus() {
-	hypr.dispatch("focusmonitor", "eDP-1");
+// Switches to next empty workspace
+export function newWorkspace() {
+	if (hypr.get_focused_workspace().get_clients().length == 0) {
+		return;
+	}
+	let list = hypr.get_workspaces();
+	list.sort((a, b) => a.id - b.id);
+	hypr.dispatch("workspace", (list[list.length - 1].id + 1).toString());
 }

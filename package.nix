@@ -13,6 +13,7 @@ ags.lib.bundle {
   extraPackages = with ags.packages.${pkgs.system}; [
     astal3
     io
+    apps
     hyprland
     tray
     mpris

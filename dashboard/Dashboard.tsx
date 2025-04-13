@@ -32,5 +32,5 @@ export default function Dashboard() {
 			</box>
 			<BottomRow />
 		</box>
-	</window >;
+	</window>;
 }

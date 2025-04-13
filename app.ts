@@ -6,6 +6,7 @@ import { mprisInit } from "./util/mpris";
 import { weatherInit } from "./util/weather";
 
 import dashboardCss from "./css/dashboard.scss";
+import Navigator from "./navigator/Navigator";
 
 App.start({
 	css: dashboardCss,
@@ -14,5 +15,6 @@ App.start({
 		hyprInit();
 		weatherInit();
 		Dashboard();
+		Navigator();
 	},
 });

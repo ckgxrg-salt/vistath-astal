@@ -35,6 +35,7 @@
             extraPackages = with ags.packages.${system}; [
               astal3
               io
+              apps
               hyprland
               tray
               mpris
