@@ -1,7 +1,6 @@
 @use "../palette" as p;
 
 .MediaButton {
-  all: unset;
   font-size: 96px;
   background-color: p.$black;
   border-radius: 12px;
@@ -13,10 +12,6 @@
 
   .Switchers {
     border-bottom: dashed p.$light-gray-darker 2px;
-
-    button {
-      all: unset;
-    }
   }
 
   .NotFound {
@@ -37,10 +32,6 @@
     .Progress {
       margin: 10px 10px 0 10px;
 
-      slider {
-        all: unset;
-      }
-
       trough {
         min-height: 50px;
         border-radius: 14px;
@@ -55,10 +46,6 @@
 
     .Actions {
       margin: 10px 10px 10px 10px;
-
-      button {
-        all: unset;
-      }
     }
   }
 }

@@ -5,12 +5,12 @@ import { Astal, Gtk } from "astal/gtk3";
 import { newWorkspace } from "../util/hyprland";
 
 const hypr = Hyprland.get_default();
-const iconTheme = Gtk.IconTheme.get_default();
 
 export default function Dock() {
 	return <box
 		className="Dock"
 		heightRequest={150}
+		spacing={30}
 	>
 		<Workspaces />
 		<NewWorkspace />
@@ -21,7 +21,8 @@ export default function Dock() {
 function Workspaces() {
 	return <box
 		className="Workspaces"
-		heightRequest={120}
+		heightRequest={150}
+		spacing={10}
 	>
 		{bind(hypr, "workspaces").as(wss => wss
 			.filter(ws => ws.id >= 0)
@@ -38,8 +39,8 @@ function Workspaces() {
 							let className = client.get_class();
 							if (Astal.Icon.lookup_icon(className)) {
 								return <box vertical valign={Gtk.Align.CENTER} halign={Gtk.Align.CENTER}>
-									<icon icon={className} />
-									<label label={className} />
+									<icon icon={className} css="font-size: 48px" />
+									<label label={className} truncate maxWidthChars={10} />
 								</box>;
 							}
 							return <label label={className} />;
@@ -55,8 +56,8 @@ function Workspaces() {
 function NewWorkspace() {
 	return <button
 		className="NewWorkspace"
-		widthRequest={120}
-		heightRequest={120}
+		widthRequest={150}
+		heightRequest={150}
 		onClicked={() => newWorkspace()}
 	>
 		<icon icon="list-add" />
@@ -66,8 +67,8 @@ function NewWorkspace() {
 function LaunchpadButton() {
 	return <button
 		className="LaunchpadButton"
-		widthRequest={120}
-		heightRequest={120}
+		widthRequest={150}
+		heightRequest={150}
 		onClicked={() => {
 			Launchpad();
 		}}

@@ -1,0 +1,8 @@
+@use "navigator/Launchpad";
+@use "navigator/Dock";
+
+window.Navigator {
+  .NavigatorContainer {
+    background: transparent;
+  }
+}

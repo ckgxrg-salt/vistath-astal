@@ -1,0 +1,25 @@
+@use "../palette" as p;
+
+.SearchEntry {
+  margin: 0 300px 50px 300px;
+}
+
+.LaunchpadApps {
+  viewport {
+    all: unset;
+  }
+
+  .AppButton {
+    icon {
+      font-size: 96px;
+    }
+
+    .AppButtonName {
+      font-size: 24px;
+    }
+
+    .AppButtonDesc {
+      font-size: 20px;
+    }
+  }
+}

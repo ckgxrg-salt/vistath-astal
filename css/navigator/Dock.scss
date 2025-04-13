@@ -1,0 +1,22 @@
+@use "../palette" as p;
+@use "sass:color";
+
+.Workspaces {
+  button {
+    background-color: p.$dark-gray;
+    border-radius: 18px;
+  }
+
+  .focused {
+    background: linear-gradient(p.$dark-gray, p.$green);
+    border-radius: 18px;
+  }
+}
+
+.NewWorkspace,
+.LaunchpadButton {
+  background-color: p.$black;
+  border: dashed p.$light-gray-darker 2px;
+  font-size: 96px;
+  border-radius: 75px;
+}

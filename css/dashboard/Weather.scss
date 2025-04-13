@@ -1,7 +1,6 @@
 @use "../palette" as p;
 
 .WeatherButton {
-  all: unset;
   font-size: 96px;
   background-color: p.$black;
   border-radius: 12px;
