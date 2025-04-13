@@ -21,6 +21,10 @@ App.start({
 		}
 		return res("Unknown command");
 	},
+	client(message: (msg: string) => string, ...args: Array<string>) {
+		const res = message(args.toString())
+		print(res)
+	},
 	main() {
 		mprisInit();
 		hyprInit();
