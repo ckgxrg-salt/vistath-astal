@@ -13,9 +13,8 @@ export default function Dashboard() {
 		name="astal-dashboard"
 		namespace="astal-dashboard"
 		layer={Astal.Layer.BOTTOM}
+		exclusivity={Astal.Exclusivity.IGNORE}
 		monitor={0}
-		exclusivity={Astal.Exclusivity.NORMAL}
-		anchor={Astal.WindowAnchor.NONE}
 	>
 		<box
 			vertical

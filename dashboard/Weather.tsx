@@ -1,6 +1,7 @@
 import { bind } from "astal";
 import { weather, updateLocation, location } from "../util/weather";
 import { active } from "./BottomRow";
+import { Astal, App } from "astal/gtk3";
 
 export default function Weather() {
 	return <box>
@@ -31,18 +32,38 @@ export default function Weather() {
 }
 
 function Location() {
-	return <entry
-		className="Location"
+	return <button
+		className="LocationButton"
 		widthRequest={230}
 		heightRequest={80}
-		placeholderText={bind(location)}
-		onActivate={self => {
-			updateLocation(self.text);
-			self.set_text("");
-			self.hide();
-			self.show();
+		onClicked={() => {
+			LocationEntry();
 		}}
 	/>;
+}
+
+function LocationEntry() {
+	return <window
+		application={App}
+		className="DashboardWeatherEntry"
+		name="astal-dashboard-weatherentry"
+		namespace="astal-dashboard-weatherentry"
+		layer={Astal.Layer.TOP}
+		exclusivity={Astal.Exclusivity.NORMAL}
+		keymode={Astal.Keymode.ON_DEMAND}
+		monitor={0}
+	>
+		<entry
+			className="Location"
+			widthRequest={230}
+			heightRequest={80}
+			placeholderText={bind(location)}
+			onActivate={self => {
+				updateLocation(self.text);
+				self.get_toplevel().destroy();
+			}}
+		/>
+	</window >;
 }
 
 function RealWeather() {
