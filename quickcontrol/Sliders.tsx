@@ -6,7 +6,7 @@ import { Gtk } from "astal/gtk3";
 export function Volume() {
 	const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
-	return <overlay>
+	return <overlay passThrough>
 		<slider
 			vertical
 			inverted
@@ -29,7 +29,7 @@ export function Volume() {
 export function Bright() {
 	const brightness = Brightness.get_default();
 
-	return <overlay>
+	return <overlay passThrough>
 		<slider
 			vertical
 			inverted

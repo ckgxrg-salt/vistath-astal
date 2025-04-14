@@ -1,31 +1,33 @@
 @use "../palette" as p;
 
-button {
-  border-radius: 0;
-  border: solid p.$black 2px;
-  font-size: 96px;
-}
+.Buttons {
+  button {
+    border-radius: 0;
+    border: solid p.$black 2px;
+    font-size: 96px;
+  }
 
-.Power {
-  background-color: p.$red;
-}
+  .Power {
+    background-color: p.$red;
+  }
 
-.Close {
-  background-color: p.$orange;
-}
+  .Close {
+    background-color: p.$orange;
+  }
 
-.CavaInactive {
-  background-color: p.$light-gray-lighter;
-}
+  .CavaInactive {
+    background-color: p.$light-gray-lighter;
+  }
 
-.CavaActive {
-  background-color: p.$magenta;
-}
+  .CavaActive {
+    background-color: p.$magenta;
+  }
 
-.MPDInactive {
-  background-color: p.$light-gray-darker;
-}
+  .MPDInactive {
+    background-color: p.$light-gray-darker;
+  }
 
-.MPDActive {
-  background-color: p.$vivid-blue;
+  .MPDActive {
+    background-color: p.$vivid-blue;
+  }
 }
