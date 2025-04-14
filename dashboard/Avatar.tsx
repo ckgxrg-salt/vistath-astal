@@ -1,6 +1,8 @@
 import { Variable } from "astal";
 import { Astal } from "astal/gtk3";
 
+import { coffeeState } from "../app";
+
 export default function Avatar() {
 	return <overlay>
 		<box
@@ -26,7 +28,6 @@ export default function Avatar() {
 	</overlay>;
 }
 
-const coffeeState = Variable(false);
 function Coffee() {
 	return <button
 		widthRequest={50}

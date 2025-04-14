@@ -1,0 +1,43 @@
+@use "../palette" as p;
+
+.AudioIcon,
+.BrightnessIcon {
+  padding-top: 24px;
+  font-size: 72px;
+}
+
+.AudioSlider {
+  border: solid p.$black 2px;
+
+  slider {
+    all: unset;
+  }
+
+  highlight {
+    all: unset;
+    background-color: p.$cyan;
+  }
+
+  trough {
+    min-width: 146px;
+    background-color: p.$light-gray-darker;
+  }
+}
+
+.BrightnessSlider {
+  border: solid p.$black 2px;
+
+  slider {
+    all: unset;
+  }
+
+  highlight {
+    all: unset;
+    background-color: p.$yellow;
+  }
+
+  trough {
+    min-width: 146px;
+    background-color: p.$light-gray-darker;
+  }
+}

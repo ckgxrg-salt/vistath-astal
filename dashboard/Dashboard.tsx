@@ -5,6 +5,7 @@ import BottomRow from "./BottomRow";
 import Calendar from "./Calendar";
 import Quote from "./Quote";
 import Monitor from "./Monitor";
+import { coffeeState } from "../app";
 
 export default function Dashboard() {
 	return <window
@@ -15,6 +16,10 @@ export default function Dashboard() {
 		layer={Astal.Layer.BOTTOM}
 		exclusivity={Astal.Exclusivity.IGNORE}
 		monitor={0}
+		setup={self => {
+			self.set_inhibit(coffeeState.get());
+			coffeeState.subscribe(state => self.set_inhibit(state));
+		}}
 	>
 		<box
 			vertical

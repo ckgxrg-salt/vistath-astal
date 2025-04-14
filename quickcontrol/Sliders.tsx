@@ -3,38 +3,48 @@ import Brightness from "../util/brightness";
 import { bind } from "astal";
 import { Gtk } from "astal/gtk3";
 
-function Volume() {
+export function Volume() {
 	const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
-	return <box>
-		<icon
-			className="AudioIcon"
-			valign={Gtk.Align.START}
-			icon={bind(speaker, "volumeIcon")}
-		/>
+	return <overlay>
 		<slider
+			vertical
+			inverted
+			heightRequest={300}
+			widthRequest={150}
 			className="AudioSlider"
 			halign={Gtk.Align.CENTER}
 			onDragged={({ value }) => speaker.volume = value}
 			value={bind(speaker, "volume")}
 		/>
-	</box>;
+		<icon
+			className="AudioIcon"
+			sensitive={false}
+			valign={Gtk.Align.START}
+			icon={bind(speaker, "volumeIcon")}
+		/>
+	</overlay>;
 }
 
-function Bright() {
+export function Bright() {
 	const brightness = Brightness.get_default();
 
-	return <box>
-		<icon
-			className="BrightnessIcon"
-			valign={Gtk.Align.START}
-			icon="weather-clear"
-		/>
+	return <overlay>
 		<slider
+			vertical
+			inverted
+			heightRequest={300}
+			widthRequest={150}
 			className="BrightnessSlider"
 			halign={Gtk.Align.CENTER}
 			onDragged={({ value }) => brightness.screen = value}
 			value={bind(brightness, "screen")}
 		/>
-	</box>;
+		<icon
+			className="BrightnessIcon"
+			sensitive={false}
+			valign={Gtk.Align.START}
+			icon="weather-clear"
+		/>
+	</overlay>;
 }

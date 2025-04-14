@@ -18,7 +18,7 @@ export default function Navigator() {
 	>
 		<box>
 			<eventbox expand onClick={() => {
-				App.get_window("astal-navigator")!.hide();
+				navigatorVisible.set(false);
 			}} />
 			<box
 				vertical
