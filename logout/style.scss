@@ -1,0 +1,63 @@
+@use "palette" as p;
+
+.Logout {
+  background-color: p.$black;
+}
+
+.MenuContainerUpper {
+  border-bottom: solid p.$light-gray-darker 5px;
+}
+
+button {
+  all: unset;
+  background-color: p.$dark-gray;
+  border: solid p.$light-gray-lighter 10px;
+  border-radius: 2px;
+  font-size: 96px;
+  margin: 40px 10px 40px 10px;
+  transition-duration: 0.3s;
+}
+
+.FocusedAction {
+  font-size: 28px;
+}
+
+.ShutdownConfirm {
+  min-width: 300px;
+  margin-top: 10px;
+  background-color: p.$red;
+  border: solid p.$red 10px;
+  font-size: 128px;
+}
+
+.RebootConfirm {
+  min-width: 300px;
+  margin-top: 10px;
+  background-color: p.$yellow;
+  border: solid p.$yellow 10px;
+  font-size: 128px;
+}
+
+.LockConfirm {
+  min-width: 300px;
+  margin-top: 10px;
+  background-color: p.$green;
+  border: solid p.$green 10px;
+  font-size: 128px;
+}
+
+.LGoutConfirm {
+  min-width: 300px;
+  margin-top: 10px;
+  background-color: p.$magenta;
+  border: solid p.$magenta 10px;
+  font-size: 128px;
+}
+
+.SuspendConfirm {
+  min-width: 300px;
+  margin-top: 10px;
+  background-color: p.$blue;
+  border: solid p.$blue 10px;
+  font-size: 128px;
+}

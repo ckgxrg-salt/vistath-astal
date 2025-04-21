@@ -25,7 +25,11 @@
       };
     in
     {
-      packages.${system}.default = import ./package.nix { inherit pkgs ags; };
+      packages.${system} = rec {
+        default = vistath-astal;
+        vistath-astal = import ./package.nix { inherit pkgs ags; };
+        logout = import ./logout/logout-package.nix { inherit pkgs ags; };
+      };
 
       devShells.${system}.default = pkgs.mkShell {
         name = "astal-dev";
