@@ -1,6 +1,7 @@
 // Interacts with Hyprland
 import { exec } from "astal";
 import Hyprland from "gi://AstalHyprland";
+import { navigatorVisible } from "../app";
 
 const hypr = Hyprland.get_default();
 
@@ -25,6 +26,7 @@ export function close() {
 		return;
 	} else if (clients.length == 1) {
 		clients[0].kill();
+		navigatorVisible.set(true);
 	} else {
 		hypr.message("kill");
 		exec(["notify-send", "-i", "laptop", "Astal", "Multiple apps in current window, click on the one you want to close."])

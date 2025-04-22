@@ -4,6 +4,7 @@ import { quickcontrolVisible } from "../app";
 
 import { Volume, Bright } from "./Sliders";
 import Buttons from "./Buttons";
+import Bar from "./Bar";
 
 export default function QuickControl() {
 	const { LEFT, TOP, BOTTOM, RIGHT } = Astal.WindowAnchor;
@@ -18,25 +19,22 @@ export default function QuickControl() {
 		visible={bind(quickcontrolVisible)}
 		monitor={0}
 	>
-		<box>
-			<eventbox widthRequest={1500} expand onClick={() => {
-				quickcontrolVisible.set(false);
-			}} />
+		<box vertical>
+			<Bar />
 			<box
-				vertical
 				className="QuickControlContainer"
-				halign={Gtk.Align.CENTER}
-				valign={Gtk.Align.CENTER}
 				spacing={10}
 			>
-				<box>
-					<Bright />
-					<Volume />
-				</box>
-				<Buttons />
-				<eventbox heightRequest={600} expand onClick={() => {
+				<eventbox widthRequest={1500} expand onClick={() => {
 					quickcontrolVisible.set(false);
 				}} />
+				<box vertical>
+					<box>
+						<Bright />
+						<Volume />
+					</box>
+					<Buttons />
+				</box>
 			</box>
 			<eventbox expand onClick={() => {
 				quickcontrolVisible.set(false);

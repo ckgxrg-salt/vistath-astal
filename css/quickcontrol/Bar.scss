@@ -1,0 +1,9 @@
+@use "../palette" as p;
+
+.Bar {
+  background-color: p.$black;
+
+  .QBatteryLabel {
+    margin-right: 10px;
+  }
+}
