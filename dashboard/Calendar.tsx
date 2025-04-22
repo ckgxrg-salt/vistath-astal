@@ -35,7 +35,7 @@ function Clock() {
 
 function Today() {
 	const event = Variable("").poll(60 * 60 * 1000, () =>
-		execAsync(["bash", "-c", "khal list today today | head -n 2"]).then(str => {
+		execAsync(["bash", "-c", "khal list today today | tail -n +2"]).then(str => {
 			if (str.length == 0) {
 				return "No Events Today =)";
 			}
