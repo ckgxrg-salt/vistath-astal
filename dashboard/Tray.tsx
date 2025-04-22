@@ -39,7 +39,7 @@ function groupIntoRows(items: Tray.TrayItem[]) {
 			widthRequest={100}
 			heightRequest={50}
 			tooltipMarkup={bind(item, "tooltipMarkup")}
-			usePopover={false}
+			usePopover={true}
 			actionGroup={bind(item, "actionGroup").as(ag => ["dbusmenu", ag])}
 			menuModel={bind(item, "menuModel")}>
 			<icon gicon={bind(item, "gicon")} />

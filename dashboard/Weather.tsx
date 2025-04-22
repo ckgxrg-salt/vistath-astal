@@ -1,5 +1,5 @@
 import { bind } from "astal";
-import { weather, updateLocation, location } from "../util/weather";
+import { weather, updateLocation } from "../util/weather";
 import { active } from "./BottomRow";
 import { Astal, App } from "astal/gtk3";
 

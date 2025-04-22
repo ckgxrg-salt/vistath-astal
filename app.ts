@@ -6,11 +6,12 @@ import Navigator from "./navigator/Navigator";
 import QuickControl from "./quickcontrol/QuickControl";
 import { hyprInit } from "./util/hyprland";
 import { mprisInit } from "./util/mpris";
-import { weatherInit } from "./util/weather";
+import { weather, weatherInit } from "./util/weather";
 
 import dashboardCss from "./css/dashboard.scss";
 import navigatorCss from "./css/navigator.scss";
 import quickcontrolCss from "./css/quickcontrol.scss";
+import { event } from "./dashboard/Calendar";
 
 export const coffeeState = Variable(false);
 export const navigatorVisible = Variable(false);
@@ -29,6 +30,12 @@ App.start({
 				navigatorVisible.set(false);
 				quickcontrolVisible.set(true);
 				exec(["pkill", "-USR1", "wvkbd-vistath"]);
+				return res("Ok");
+			case "reload":
+				event.stopPoll();
+				event.startPoll();
+				weather.stopPoll();
+				weather.startPoll();
 				return res("Ok");
 			default:
 				return res("Unknown command");

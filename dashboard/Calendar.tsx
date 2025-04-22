@@ -33,14 +33,15 @@ function Clock() {
 	</box>;
 }
 
+export const event = Variable("").poll(60 * 60 * 1000, () =>
+	execAsync(["bash", "-c", "khal list today today | tail -n +2"]).then(str => {
+		if (str.length == 0) {
+			return "No Events Today =)";
+		}
+		return str;
+	}));
+
 function Today() {
-	const event = Variable("").poll(60 * 60 * 1000, () =>
-		execAsync(["bash", "-c", "khal list today today | tail -n +2"]).then(str => {
-			if (str.length == 0) {
-				return "No Events Today =)";
-			}
-			return str;
-		}));
 
 	return <box
 		className="Today"
