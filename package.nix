@@ -3,7 +3,7 @@
   ags,
 }:
 # Bundle the project
-(ags.lib.bundle {
+ags.lib.bundle {
   inherit pkgs;
   src = ./.;
   name = "vistath-astal";
@@ -21,9 +21,4 @@
     battery
     pkgs.libgtop
   ];
-}).overrideAttrs
-  {
-    postInstall = ''
-      cp ./abstract-ckgxrg.jpg $out/share
-    '';
-  }
+}
