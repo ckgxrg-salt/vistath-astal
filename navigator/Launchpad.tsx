@@ -62,7 +62,7 @@ export default function Launchpad() {
 		name="astal-navigator-launchpad"
 		anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.BOTTOM}
 		layer={Astal.Layer.OVERLAY}
-		exclusivity={Astal.Exclusivity.IGNORE}
+		exclusivity={Astal.Exclusivity.NORMAL}
 		keymode={Astal.Keymode.ON_DEMAND}
 		application={App}
 		onShow={() => {
