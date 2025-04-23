@@ -21,7 +21,15 @@ export function Logout() {
 			handleKeybind(event.get_keyval()[1]);
 		}}
 	>
-		<Buttons />
+		<box>
+			<eventbox expand onClick={() => App.quit()} />
+			<box vertical>
+				<eventbox expand onClick={() => App.quit()} />
+				<Buttons />
+				<eventbox expand onClick={() => App.quit()} />
+			</box>
+			<eventbox expand onClick={() => App.quit()} />
+		</box>
 	</window>;
 }
 
