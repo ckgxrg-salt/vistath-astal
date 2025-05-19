@@ -101,12 +101,12 @@ function Lock() {
 function Logout() {
 	return <button
 		className={bind(confirm).as(c => mapClassname("LGout", c))}
-		tooltipText="Log out from Current Session"
+		tooltipText="Terminate Current Session"
 		widthRequest={300}
 		heightRequest={350}
 		onClicked={() => {
 			if (confirm.get() === "lgout") {
-				hypr.dispatch("exec", "uwsm stop");
+				hypr.dispatch("exit", "");
 				App.quit();
 			}
 			confirm.set("lgout");

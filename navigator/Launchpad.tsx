@@ -14,7 +14,7 @@ function AppButton({ app }: { app: Apps.Application }) {
 		heightRequest={250}
 		onClicked={() => {
 			newWorkspace();
-			hypr.dispatch("exec", "uwsm app -- " + app.entry);
+			hypr.dispatch("exec", app.entry);
 			navigatorVisible.set(false);
 			App.get_window("astal-navigator-launchpad")!.destroy();
 		}}>

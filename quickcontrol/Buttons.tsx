@@ -25,7 +25,7 @@ function Power() {
 		widthRequest={150}
 		heightRequest={150}
 		onClicked={() => {
-			execAsync("uwsm app -- astal-logout");
+			execAsync("astal-logout");
 			quickcontrolVisible.set(false);
 		}}
 	>
